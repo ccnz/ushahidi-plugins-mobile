@@ -91,9 +91,10 @@ class Reports_Controller extends Mobile_Controller {
 			$order = 'distance asc';
 		}
 
-		if (!empty($town)) {
-			$location = mobile_geocoder::geocode($town . ',New Zealand');
+		if (empty($town)) {
+			$town = 'christchurch';
 		}
+		$location = mobile_geocoder::geocode($town . ',New Zealand');
 
 		// if we don't get location there will be no results rendered
 		if (!$location) {
