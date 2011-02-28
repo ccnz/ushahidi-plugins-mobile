@@ -31,10 +31,9 @@ if ($show_map === TRUE) {
 }
 ?>>
 	<div id="container">
-		<div id="navigation">
-			<h1><a href="<?php echo url::site()."mobile"; ?>"><?php echo $site_name; ?></a></h1>
-			<?php if(!empty($breadcrumbs)) {
-				echo '<a href="'. url::site().'mobile">Home</a>' . $breadcrumbs; 
-			}?>
-		</div>
+		<?php if(!empty($breadcrumbs)) { ?>
+			<div id="navigation">
+				<?php echo '<a href="'. url::site().'mobile">Home</a>' . $breadcrumbs; ?>
+			</div>
+		<?php } ?>
 		<div id="page">
